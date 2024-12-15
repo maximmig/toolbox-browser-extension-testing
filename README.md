@@ -8,6 +8,7 @@ This is a **test repository** created for the purpose of testing and validating 
 
 ## Related Resources
 - [Toolbox App browser extension on GitHub](https://github.com/JetBrains/toolbox-browser-extension)
+- [Mirror of this repository on GitLab](https://gitlab.com/maximmig/toolbox-browser-extension-testing)
 
 ## Disclaimer
 This repository is for **testing purposes only** and does not contain any meaningful or production-ready code.
