@@ -1,0 +1,25 @@
+name: Mirror to GitLab
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  mirror:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Push to GitLab
+        env:
+          GITLAB_PAT: ${{ secrets.GITLAB_PAT }}
+        run: |
+          git filter-repo --path .github --invert-paths || echo "filter-repo not needed"
+          git remote add gitlab https://oauth2:${GITLAB_PAT}@gitlab.com/maximmig/toolbox-browser-extension-testing.git
+          git push gitlab --all
+          git push gitlab --tags
