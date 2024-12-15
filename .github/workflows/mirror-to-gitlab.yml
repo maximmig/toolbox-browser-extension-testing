@@ -19,7 +19,6 @@ jobs:
         env:
           GITLAB_PAT: ${{ secrets.GITLAB_PAT }}
         run: |
-          git filter-repo --path .github --invert-paths || echo "filter-repo not needed"
           git remote add gitlab https://oauth2:${GITLAB_PAT}@gitlab.com/maximmig/toolbox-browser-extension-testing.git
           git push gitlab --all
           git push gitlab --tags
