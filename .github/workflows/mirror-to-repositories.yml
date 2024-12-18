@@ -28,8 +28,8 @@ jobs:
           GITEE_PAT: ${{ secrets.GITEE_PAT }}
         run: |
           git remote add gitee https://oauth2:${GITEE_PAT}@gitee.com/maximmig/toolbox-browser-extension-testing.git
-          git push gitee --all
-          git push gitee --tags
+          git push gitee --all --force
+          git push gitee --tags --force
 
       - name: Setup SSH
         run: |
