@@ -9,6 +9,7 @@ the [Toolbox App browser extension](https://github.com/JetBrains/toolbox-browser
 
 ## Related Resources
 - [Toolbox App browser extension on GitHub](https://github.com/JetBrains/toolbox-browser-extension)
+- [This repository on GitHub](https://github.com/maximmig/toolbox-browser-extension-testing)
 - [Mirror of this repository on Gitee (private)](https://gitee.com/maximmig/toolbox-browser-extension-testing)
 - [Mirror of this repository on GitLab](https://gitlab.com/maximmig/toolbox-browser-extension-testing)
 - [Mirror of this repository on Bitbucket](https://bitbucket.org/maximmig-tbx/toolbox-browser-extension-testing)
