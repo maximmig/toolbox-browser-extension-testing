@@ -20,8 +20,8 @@ jobs:
           GITLAB_PAT: ${{ secrets.GITLAB_PAT }}
         run: |
           git remote add gitlab https://oauth2:${GITLAB_PAT}@gitlab.com/maximmig/toolbox-browser-extension-testing.git
-          git push gitlab --all
-          git push gitlab --tags
+          git push gitlab --all --force
+          git push gitlab --tags --force
 
       - name: Push to Gitee
         env:
