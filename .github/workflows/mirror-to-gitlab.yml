@@ -30,3 +30,17 @@ jobs:
           git remote add gitee https://oauth2:${GITEE_PAT}@gitee.com/maximmig/toolbox-browser-extension-testing.git
           git push gitee --all
           git push gitee --tags
+
+      - name: Setup SSH
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.BITBUCKET_SSH_KEY }}" > ~/.ssh/id_ed25519
+          chmod 600 ~/.ssh/id_ed25519
+          ssh-keyscan -t ed25519 bitbucket.org >> ~/.ssh/known_hosts
+
+      - name: Push to Bitbucket
+        env:
+          GIT_SSH_COMMAND: 'ssh -i ~/.ssh/id_ed25519'
+        run: |
+          git remote add bitbucket git@bitbucket.org:maximmig-tbx/toolbox-browser-extension-testing.git
+          git push -u bitbucket main --force
