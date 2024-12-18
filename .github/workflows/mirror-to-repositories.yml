@@ -23,13 +23,13 @@ jobs:
           git push gitlab --all
           git push gitlab --tags
 
-      #      - name: Push to Gitee
-      #        env:
-      #          GITEE_PAT: ${{ secrets.GITEE_PAT }}
-      #        run: |
-      #          git remote add gitee https://oauth2:${GITEE_PAT}@gitee.com/maximmig/toolbox-browser-extension-testing.git
-      #          git push gitee --all
-      #          git push gitee --tags
+      - name: Push to Gitee
+        env:
+          GITEE_PAT: ${{ secrets.GITEE_PAT }}
+        run: |
+          git remote add gitee https://oauth2:${GITEE_PAT}@gitee.com/maximmig/toolbox-browser-extension-testing.git
+          git push gitee --all
+          git push gitee --tags
 
       - name: Setup SSH
         run: |
